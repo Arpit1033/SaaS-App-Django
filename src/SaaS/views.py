@@ -12,6 +12,5 @@ def home_page_view(request, *args, **kwargs):
         "total_page_visit_count":qs.count()
     }
     path = request.path
-    print(path)
     Pagevisit.objects.create(path=path)
     return render(request,"home.html",my_context)
