@@ -29,7 +29,7 @@ ALLOWED_HOSTS = [
     ".railway.app" # https://sass.prod.railway.app
 ]
 if DEBUG:
-    ALLOWED_HOSTS = [
+    ALLOWED_HOSTS += [
         "127.0.0.1",
         "localhost"
     ]
