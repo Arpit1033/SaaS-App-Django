@@ -2,7 +2,10 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from visits.models import Pagevisit
 
-def home_page_view(request, *args, **kwargs):
+def home_view(request, *args, **kwargs):
+    return about_view(request, *args, **kwargs)
+
+def about_view(request, *args, **kwargs):
     qs = Pagevisit.objects.all()
     page_qs = Pagevisit.objects.filter(path=request.path)
     my_title = "My Page"
