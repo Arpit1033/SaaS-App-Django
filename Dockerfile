@@ -4,10 +4,10 @@ ARG PYTHON_VERSION=3.12-slim-bullseye
 FROM python:${PYTHON_VERSION}
 
 # Create a virtual environment
-RUN python -m venv /opt/venv
+RUN python -m venv /opt/myenv
 
 # Set the virtual environment as the current location
-ENV PATH=/opt/venv/bin:$PATH
+ENV PATH=/opt/myenv/bin:$PATH
 
 # Upgrade pip
 RUN pip install --upgrade pip
@@ -49,7 +49,7 @@ RUN pip install -r /tmp/requirements.txt
 # RUN python manage.py collectstatic --noinput
 
 # set the Django default project name
-ARG PROJ_NAME="cfehome"
+ARG PROJ_NAME="SaaS"
 
 # create a bash script to run the Django project
 # this script will execute at runtime when
